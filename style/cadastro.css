@@ -207,6 +207,24 @@ nav a{
     
 }
 
+#cpf-form{
+    width:14%;
+}
+
+#cep-form{
+    width:10%;
+}
+
+#rua-form{
+    width: 80%;
+    padding-right: 3rem;
+}
+
+#numero-form{
+    width: 7.2%;
+    padding-top: 1rem;
+}
+
 footer{
     padding: 1rem 0;
     background-color: #43395c;

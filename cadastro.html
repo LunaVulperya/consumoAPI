@@ -43,20 +43,21 @@
                 </div>
                 <div class="mb-3">
                     <label for="data-nascimento" class="form-label">Insira seu data de nascimento:</label>
-                    <input type="date" name="data-nascimento" class="form-control" id="data-nascimento">                
+                    <input type="date" name="data-nascimento" class="form-control" id="data-nascimento" onkeypress="return somenteNumeros(event)">                
                 </div>
                 <div class="mb-3">
-                    <label for="cpf" class="form-label">Insira seu cpf:</label>
-                    <input type="text" name="cpf" class="form-control" id="cpf">                
+                    <label for="cpf" class="form-label" id="cpf-form">Insira seu cpf:
+                    <input type="text" name="cpf" class="form-control" id="cpf" placeholder="___.___.___-__" onkeypress="return somenteNumeros(event)"> </label>              
                 </div>
                 <div class="mb-3">
-                    <label for="cep" class="form-label">CEP:
-                    <input type="text" name="cep" class="form-control" id="cep"></label>
-                                    
+                    <label for="cep" class="form-label" id="cep-form">CEP:
+                    <input type="text" name="cep" class="form-control" id="cep" onkeypress="return somenteNumeros(event)"></label>                  
                 </div>
                 <div class="mb-3">
-                    <label for="rua" class="form-label">Logradouro(com nº):</label>
-                    <input type="text" name="rua" class="form-control" id="rua">                
+                    <label for="rua" class="form-label" id="rua-form">Logradouro:
+                    <input type="text" name="rua" class="form-control" id="rua"></label>
+                    <label for="numero" class="form-label" id="numero-form">Número:
+                    <input type="text" name="numero" class="form-control" id="numero" onkeypress="return somenteNumeros(event)"></label>              
                 </div>
                 <div class="mb-3">
                     <label for="bairro" class="form-label">Bairro:</label>
