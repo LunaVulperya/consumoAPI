@@ -21,7 +21,7 @@ const cepValido = (cep) => cep.length == 8 && eNumero(cep);
 // Consumo de API viaCEP
 const pesquisarCEP = async() => {
     limpa_formulário_cep();
-    const url = `http://viacep.com.br/ws/${cep.value}/json/`;
+    const url = `https://viacep.com.br/ws/${cep.value}/json/`;
     if(cepValido(cep.value)){
         const dados = await fetch(url);
         const address = await dados.json();
