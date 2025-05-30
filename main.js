@@ -1,11 +1,19 @@
 let cpf = document.querySelector("#cpf");
-
+let cepform = document.querySelector("#cep");
+// cep = cep.replace(/[^\d+]+/g, "");
 cpf.addEventListener("keypress", ()=>{
     let tamanhoCampo = cpf.value.length;
     if(tamanhoCampo == 3 || tamanhoCampo == 7){
         cpf.value += ".";
     } else if(tamanhoCampo == 11){
         cpf.value += "-";
+    }
+});
+
+cepform.addEventListener("keypress", ()=>{
+    let tamanhoCampo = cepform.value.length;
+    if(tamanhoCampo == 5){
+        cepform.value += "-";
     }
 });
 
@@ -39,13 +47,19 @@ const preencherFormulario = (endereco) => {
     document.getElementById('estado').value=endereco.estado;
 }
 
+
+
 // Validador de CEP
 const eNumero = (numero) => /^[0-9]+$/.test(numero);
 const cepValido = (cep) => cep.length == 8 && eNumero(cep);
+function cepTrim(cep) {
+    return cep.toString().replace(/\D/g, "");
+  }
 
 // Consumo de API viaCEP
 const pesquisarCEP = async() => {
     limpa_formulário_cep();
+    cepTrim(cep);
     const url = `https://viacep.com.br/ws/${cep.value}/json/`;
     if(cepValido(cep.value)){
         const dados = await fetch(url);
@@ -62,6 +76,7 @@ const pesquisarCEP = async() => {
 }
 
 document.getElementById('cep').addEventListener('focusout', pesquisarCEP);
+
 
 // function meu_callback(conteudo) {
 // if (!("erro" in conteudo)) {
